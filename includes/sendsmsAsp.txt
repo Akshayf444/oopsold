@@ -1,0 +1,37 @@
+public static string SendMessageByMSPSGC(string mobileNo, string smsMessage, int route)
+    {
+        string smsDomain = ConfigurationManager.AppSettings["smsDomain"].ToString();
+        string smsUser = ConfigurationManager.AppSettings["smsUser"].ToString();
+        string smsPassword = ConfigurationManager.AppSettings["smsPassword"].ToString();
+        string smsSender = ConfigurationManager.AppSettings["smsSender"].ToString();
+
+        string messageEncoded = HttpUtility.UrlEncode(smsMessage);
+        string url = smsDomain + "sendsms.jsp";
+        string postData = "user=" + smsUser + "&password=" + smsPassword + "&senderid=MSPSGC&mobiles=" + mobileNo + "&sms=" + messageEncoded;
+        try
+        {
+            WebRequest request = WebRequest.Create(url);
+            request.Method = "POST";
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = byteArray.Length;
+            Stream dataStream = request.GetRequestStream();
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            dataStream.Close();
+            WebResponse response = request.GetResponse();
+
+            dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            string responseFromServer = reader.ReadToEnd();
+
+            reader.Close();
+            dataStream.Close();
+            response.Close();
+
+            return responseFromServer;
+        }
+        catch (Exception ex)
+        {
+            return "0";
+        }
+    }

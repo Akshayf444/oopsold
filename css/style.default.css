@@ -1,0 +1,657 @@
+/*
+ *  Created: @themepixels
+ *  Website: http://themepixels.com/
+ * 
+ *  ---------------------------------------
+ *  ---------- TABLE OF CONTENTS ----------
+ *  ---------------------------------------
+ *  
+ *  1.  FILE IMPORTS
+ *  2.  RESET STYLES
+ *  3.  HEADER PANEL
+ *          3.1     HEADER LEFT
+ *          3.2     HEADER RIGHT
+ *  4.  LEFT PANEL
+ *          4.1     NAVIGATION STYLES
+ *          4.2     INFO SUMMARY
+ *  5.  MAIN PANEL
+ *          5.1     DASHBOARD
+ *  6.  FORM STYLES
+ *          6.1     FORM WIZARD STYLES
+ *  7.  UI ELEMENTS
+ *  8.  EMAIL
+ *  9.  TABLES
+ *  10. PAGES
+ *          10.1    CALENDAR
+ *          10.2    MEDIA MANAGER
+ *          10.3    PROFILE
+ *          10.4    BLOG LIST
+ *          10.5    BLOG SINGLE
+ *          10.6    PEOPLE DIRECTORY
+ *          10.7    NOT FOUND PAGE
+ *          10.8    SEARCH RESULTS
+ *          10.9    INVOICE
+ *          10.10   TIMELINE
+ *          10.11   LOCKED SCREEN
+ *          10.12   SIGN IN
+ *          10.13   SIGN UP
+ *  11. LEFT PANEL COLLAPSED
+ *  12. RIGHT PANEL STYLES
+ *  13. HORIZONTAL MENU
+ *  14. FIXED WIDTH
+ *  15. MODALS
+ *  16. BUG TRACKER
+ *  17. ADDITIONAL STYLES
+ *          17.1    DROPDOWN
+ *          17.2    ICON
+ *          17.3    TIME PICKER
+ *          17.4    COLOR PICKER
+ *          17.5    STICKY HEADER
+ *          17.6    CUSTOM STYLES
+ *  18. MEDIA QUERIES
+ *  
+ */
+
+
+
+
+
+/********** 1. FILE IMPORTS **********/
+/*************************************/
+
+@import url('bootstrap.css');
+
+/********** 2. RESET STYLES **********/
+/*************************************/
+
+body {
+    background: #FFF;
+    font-family: 'Roboto', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;
+    line-height: 21px;
+    color: #636e7b;
+}
+
+body.notfound,
+body.signin {
+    background: #FFF;
+}
+
+input,select,textarea {
+    font-family: 'Roboto', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif !important;
+    color: #636e7b;
+}
+
+a:focus, a:active { outline: none; }
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Roboto', 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, sans-serif;
+}
+
+strong {
+    font-family: 'Roboto';
+    font-weight: normal;
+}
+
+
+/***** 10.12 SIGN IN *****/
+
+
+.signinpanel {
+    width: 780px;
+    margin: 3% auto 0 auto;
+}
+
+.signinpanel .logopanel {
+    float: none;
+    width: auto;
+    padding: 0;
+    background: none;
+}
+
+.signinpanel .signin-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.signinpanel .form-control {
+    display: block;
+    margin-top: 15px;
+}
+
+.signinpanel .uname {
+    background: #fff url(../images/user.png) no-repeat 95% center; 
+}
+
+.signinpanel .pword {
+    background: #fff url(../images/locked.png) no-repeat 95% center; 
+}
+
+.signinpanel .btn {
+    margin-top: 15px;
+}
+
+.signinpanel form {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid #ccc;
+    -moz-box-shadow: 0 3px 0 rgba(12,12,12,0.03);
+    -webkit-box-shadow: 0 3px 0 rgba(12,12,12,0.03);
+    box-shadow: 0 3px 0 rgba(12,12,12,0.03);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.signinpanel form a {
+    color: #666;
+}
+
+
+/***** 10.13 SIGN UP *****/
+.mb20 {
+    margin-bottom: 20px;
+}
+
+form > .mb20{
+    border-bottom: 2px dashed #090;
+}
+
+/********** 18. MEDIA QUERIES **********/
+/***************************************/
+
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        position: relative;
+    }
+
+    .leftpanel {
+        display: none;
+    }
+
+    .mainpanel {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .leftpanel-collapsed .leftpanel {
+        display: none;
+    }
+
+    .leftpanel-collapsed .mainpanel {
+        margin-left: 0;
+    }
+
+    .leftpanel-collapsed .headerbar {
+        margin-left: 0;
+    }
+
+    .leftpanel-show section {
+        overflow-x: hidden;
+    }
+
+    .leftpanel-show .leftpanel {
+        display: block;
+    }
+
+    .leftpanel-show .mainpanel {
+        margin-left: 240px;
+    }
+
+    .stickyheader .headerbar {
+        left: 0;
+    }
+
+    .stickyheader.leftpanel-show .headerbar {
+        left: 240px;
+    }
+
+    .stickyheader.chat-relative-view .headerbar {
+        right: 240px;
+        left: auto;
+    }
+
+    .stickyheader .header-right {
+        margin-right: 0;
+    }
+
+    .btn-demo {
+        margin-bottom: 20px;
+    }
+
+    .leftpanelinner {
+        padding: 5px 10px;
+    }
+
+    .leftpanelinner .searchform input {
+        background: #131b26;
+        border: 0;
+    }
+
+    /* horizontal menu related */
+    .nav-horizontal {
+        position: relative;
+    }
+
+    .horizontal-menu .menutoggle {
+        display: block;
+    }
+
+    .horizontal-menu .headerbar .logopanel {
+        display: none;
+    }
+
+    .nav-horizontal .caret {
+        display: none;
+    }
+
+    .horizontal-menu .header-left,
+    .horizontal-menu .topnav {
+        float: none;
+    }
+
+    .horizontal-menu-sidebar .header-left,
+    .horizontal-menu-sidebar .topnav {
+        float: none;
+    }
+
+    .fixed-noleft .menutoggle {
+        display: block;
+    }
+
+    .fixed-noleft .headerbar .logopanel {
+        display: none;
+    }
+
+    .fixed-noleft .header-left,
+    .fixed-noleft .topnav {
+        float: none;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .searchform {
+        position: relative;
+    }
+
+    .headermenu li:nth-child(4) {
+        display: none;
+    }
+
+    .leftpanel .searchform,
+    .leftpanel .userlogged {
+        display: block;
+    }
+
+    .breadcrumb-wrapper {
+        display: none;
+    }
+
+    .headermenu .dropdown-menu:after {
+        display: none;
+    }
+
+    .rightpanel .nav-tabs.nav-justified > li > a,
+    .rightpanel .nav-justified > li > a {
+        margin-bottom: 0;
+    }
+
+    .panel-email .col-sm-3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .notfoundpanel {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .notfoundpanel h1 {
+        font-size: 72px;
+        line-height: 72px;
+    }
+
+    .notfoundpanel h3 {
+        font-size: 14px;
+        line-height: normal;
+    }
+
+    .notfound h4 {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .notfoundpanel form {
+        width: auto;
+    }
+
+    .notfoundpanel .form-control {
+        float: none;
+        width: 100%;
+    }
+
+    .notfoundpanel .btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .signinpanel,
+    .signuppanel {
+        margin: 0 auto;
+        width: 480px;
+        padding: 20px;
+    }
+
+    .signinpanel form {
+        margin-top: 20px;
+    }
+
+    .signup-footer {
+        margin-bottom: 10px;
+    }
+
+    .signuppanel .form-control {
+        margin-bottom: 10px;
+    }
+
+    .signup-footer .pull-left,
+    .signup-footer .pull-right {
+        float: none !important;
+        text-align: center;
+    }
+
+    .widget-quick-status-post .nav-tabs.nav-justified > li {
+        display: table-cell;
+        width: 1%;
+        margin-bottom: -5px;
+    }
+
+    .widget-quick-status-post .nav-tabs.nav-justified > li a {
+        margin: 0;
+    }
+
+    .nav-tabs.nav-justified.nav-profile > li {
+        float: none;
+        margin-bottom: 0;
+        display: table-cell;
+        width: 1%;
+    }
+
+    .nav-tabs.nav-justified.nav-profile > li a {
+        margin: 0;
+        -moz-border-radius: 3px 3px 0 0;
+        -webkit-border-radius: 3px 3px 0 0;
+        border-radius: 3px 3px 0 0;
+
+    }
+
+    .dataTables_info {
+        float: none !important;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .dataTables_paginate {
+        margin-bottom: 10px;
+        text-align: center !important;
+        float: none !important;
+    }
+
+    .paginate_disabled_previous,
+    .paginate_enabled_previous,
+    .paginate_disabled_next,
+    .paginate_enabled_next {
+        float: none !important;
+    }
+
+    .dataTables_filter,
+    .dataTables_length {
+        float: none !important;
+        padding: 10px 0 0 10px;
+        margin: auto !important;
+        display: inline-block;
+    }
+
+    .table.dataTable th,
+    .table.dataTable td {
+        font-size: 13px;
+        min-width: 150px;
+    }
+
+    .paging_full_numbers {
+        min-width: 500px;
+        margin: 0 0 10px 10px;
+    }
+
+    .paging_full_numbers:after {
+        clear: both;
+        display: block;
+        content: '';
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .signinpanel,
+    .signuppanel {
+        width: 360px;
+    }
+
+    .panel-email .pull-right {
+        float: none !important;
+    }
+
+    .pageheader h2 {
+        font-size: 18px;
+    }
+
+    .pageheader .glyphicon,
+    .pageheader .fa {
+        font-size: 18px;
+    }
+
+    .pageheader h2 span {
+        font-size: 11px;
+    }
+
+    .fc-header td {
+        display: block !important;
+        text-align: center;
+        width: 100%;
+        border: 1px solid #eee;
+        padding: 10px !important;
+        margin-top: -1px;
+    }
+
+    .fc-button {
+        padding: 2px 5px !important;
+        margin: 0 !important;
+    }
+
+    .fc-header-title h2 {
+        margin: 0 !important;
+    }
+
+    .filemanager-options li {
+        padding: 5px 7px;
+    }
+
+    .filemanager-options .filter-type {
+        display: block;
+        float: none;
+        border-top: 1px solid #eee;
+    }
+
+    .comment-list .media-object {
+        width: 30px;
+        padding: 2px;
+    }
+
+    .comment-list .media > .pull-left {
+        margin: 0;
+    }
+
+    .comment-list h4 {
+        font-size: 13px;
+    }
+
+    .comment-list .reply {
+        font-size: 10px;
+        padding: 2px 5px;
+    }
+
+    .comment-list .media-body {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .blog-content form {
+        margin-bottom: 20px;
+    }
+
+    .letter-list {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .letter-list::after {
+        clear: both;
+        display: block;
+        content: '';
+    }
+
+    .letter-list li {
+        float: left;
+        width: auto;
+        display: inline-block;
+    }
+
+    .letter-list li a {
+        display: block;
+        padding: 2px 5px;
+    }
+
+    .btn-invoice:before {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
+    .btn-invoice .btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-tabs.nav-justified.nav-profile > li a {
+        font-size: 13px;
+        padding: 14px 10px;
+    }
+
+    #bloglist > div {
+        padding: 0;
+        margin: 0;
+        float: none;
+        width: auto;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+
+    .pageheader h2 span {
+        display: none;
+    }
+
+    .blog-title {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .blog-summary {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .blog-summary .btn {
+        padding: 2px 5px;
+        display: block;
+        width: 100%;
+    }
+
+    .headermenu li:first-child .dropdown-menu {
+        margin-right: -130px;
+    }
+
+    .headermenu li:nth-child(2) .dropdown-menu {
+        margin-right: -85px;
+    }
+
+    .headermenu li:nth-child(3) .dropdown-menu {
+        margin-right: -37px;
+    }
+
+    .nav-tabs.nav-justified.nav-profile > li {
+        float: none;
+        display: block;
+        width: auto;
+    }
+
+    .blog-media .media-body {
+        overflow: visible;
+    }
+
+    .follower-list .btn {
+        display: block;
+        margin: 0 0 5px 0;
+        width: 100%;
+    }
+
+    .filemanager-options li {
+        display: block;
+        border-top: 1px solid #eee;
+    }
+
+    .filemanager-options li:first-child {
+        border-top: 0;
+    }
+
+    .authorpanel .media-object {
+        width: 80px;
+        margin-right: 10px;
+    }
+
+    .people-item .media-object {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .pagination {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .signinpanel, .signuppanel {
+        width: 310px;
+    }
+
+}
+
+hr{
+    color: #696969;
+}
+
+.helpline{
+    font-weight: bold;
+    color: red;
+}
